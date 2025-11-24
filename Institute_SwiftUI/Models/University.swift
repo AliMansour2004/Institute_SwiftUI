@@ -13,7 +13,7 @@ final class University {
     @Relationship(deleteRule: .cascade, inverse: \Student.university)
     var students: [Student] = []
     
-    @Relationship
+    @Relationship(deleteRule: .nullify)
     var courses: [Course] = []
     
     var name: String

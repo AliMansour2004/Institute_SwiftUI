@@ -11,9 +11,16 @@ import SwiftData
 final class Instructor{
     var fname: String
     var lname: String
+    var phone: String
+    var email: String
     
-    init(fname: String, lname: String) {
+    @Relationship(inverse: \Offering.instructor)
+    var offerings: [Offering] = []
+    
+    init(fname: String, lname: String, phone: String, email: String) {
         self.fname = fname
         self.lname = lname
+        self.phone = phone
+        self.email = email
     }
 }

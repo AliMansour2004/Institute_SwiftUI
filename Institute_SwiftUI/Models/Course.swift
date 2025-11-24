@@ -14,6 +14,9 @@ final class Course{
     @Relationship(inverse: \University.courses)
     var universities: [University] = []
     
+    @Relationship(inverse: \Offering.course)
+    var offerings: [Offering] = []
+    
     init(title: String) {
         self.title = title
     }

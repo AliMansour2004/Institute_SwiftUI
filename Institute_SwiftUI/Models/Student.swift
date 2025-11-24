@@ -11,18 +11,17 @@ import SwiftData
 final class Student{
     var fname: String
     var lname: String
+    var phone: Int
     var email: String
-    var password: String
     
     var university: University
     
-    init(fname: String, lname: String, email: String, password: String, university: University? = nil) {
+    init(fname: String, lname: String, phone: Int, email: String, university: University) {
         self.fname = fname
         self.lname = lname
+        self.phone = phone
         self.email = email
-        self.password = password
-        self.university = university ?? University(name: "unidentified")
-        
+        self.university = university
     }
     
     

@@ -7,11 +7,17 @@
 
 import SwiftData
 
+@Model
 final class Room{
     var number: Int
+    var capacity: Int?
     
-    init(number: Int) {
+    @Relationship(deleteRule: .cascade, inverse: \Offering.room)
+    var offerings: [Offering] = []
+    
+    init(number: Int, capacity: Int? = nil) {
         self.number = number
+        self.capacity = capacity
     }
     
 }
