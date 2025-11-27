@@ -31,5 +31,15 @@ enum AppStrings{
         static let settings = "gearshape"
     }
     
+    enum AuthServiceError{
+        static let wrongPassword = "Incorrect email or password"
+        static let userNotFound = "No user found for this email"
+        static let emailTaken = "This email is already registered"
+    }
+    
+    enum AuthViewModelError{
+        static let selectUni = "Please select a university."
+    }
+    
 }
 
