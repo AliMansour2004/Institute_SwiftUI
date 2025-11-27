@@ -11,12 +11,12 @@ import SwiftData
 final class Student{
     var fname: String
     var lname: String
-    var phone: Int
+    var phone: String
     var email: String
     
     var university: University
     
-    init(fname: String, lname: String, phone: Int, email: String, university: University) {
+    init(fname: String, lname: String, phone: String, email: String, university: University) {
         self.fname = fname
         self.lname = lname
         self.phone = phone
