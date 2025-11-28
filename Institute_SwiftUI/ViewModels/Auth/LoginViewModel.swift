@@ -33,7 +33,7 @@ final class LoginViewModel: ObservableObject {
         
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedEmail.isEmpty, !password.isEmpty else {
-            loginError = AppStrings.LoginViewModelError.emptyFields
+            loginError = AppStrings.LoginSignupViewModelError.emptyFields
             return
         }
         
@@ -54,7 +54,7 @@ final class LoginViewModel: ObservableObject {
             if let authError = error as? AuthError {
                 loginError = authError.localizedDescription
             } else {
-                loginError = AppStrings.LoginViewModelError.unexpectedError
+                loginError = AppStrings.LoginSignupViewModelError.unexpectedError
             }
         }
     }

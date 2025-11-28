@@ -11,14 +11,12 @@ enum AppStrings{
         static let StudentProfile = "Profile"
         static let StudentOfferings = "Offerings"
         
-        
         static let InstructorHome = "Home"
         static let InstructorProfile = "Profile"
         static let InstructorCourses = "Courses"
         
         static let Settings = "Settings"
     }
-    
     enum TabImageName {
         static let studentHome = "house"
         static let studentOfferings = "book"
@@ -36,21 +34,30 @@ enum AppStrings{
         static let userNotFound = "No user found for this email"
         static let emailTaken = "This email is already registered"
     }
-    
     enum AuthViewModelError{
         static let selectUni = "Please select a university."
     }
     
-    enum LoginViewModelError{
+    enum LoginSignupViewModelError{
         static let emptyFields = "Please fill in all the fields."
         static let unexpectedError = "An unexpected error occurred."
     }
-    
     enum LoginView{
         static let title = "Login"
         static let email = "Email"
         static let password = "Password"
         static let signInButton = "Sign In"
+    }
+    
+    enum SignupView{
+        static let title = "Sign Up"
+        static let fname = "First Name"
+        static let lname = "Last Name"
+        static let phone = "Phone"
+        static let email = "Email"
+        static let password = "Password"
+        static let uniSelect = "Select a university"
+        static let createButton = "Create Account"
     }
     
 }
