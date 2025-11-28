@@ -103,7 +103,9 @@ final class AuthService{
         return FetchDescriptor<Instructor>(predicate: #Predicate { $0.email == email })
     }
     
-    func logout() { UserDefaults.standard.removeObject(forKey: "lastLoggedEmail") }
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "lastLoggedEmail")
+    }
     
 }
 

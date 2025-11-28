@@ -97,6 +97,4 @@ final class AuthViewModel: ObservableObject {
         errorMessage = nil
     }
     
-    
-    
 }

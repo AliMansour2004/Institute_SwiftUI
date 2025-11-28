@@ -41,5 +41,17 @@ enum AppStrings{
         static let selectUni = "Please select a university."
     }
     
+    enum LoginViewModelError{
+        static let emptyFields = "Please fill in all the fields."
+        static let unexpectedError = "An unexpected error occurred."
+    }
+    
+    enum LoginView{
+        static let title = "Login"
+        static let email = "Email"
+        static let password = "Password"
+        static let signInButton = "Sign In"
+    }
+    
 }
 
