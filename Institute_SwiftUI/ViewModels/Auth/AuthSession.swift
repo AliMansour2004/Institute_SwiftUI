@@ -28,9 +28,18 @@ final class AuthSession: ObservableObject {
     }
     
     func logout(){
+        let studentEmail = currentStudent?.email
+        let instructorEmail = currentInstructor?.email
+
         currentStudent = nil
         currentInstructor = nil
         isAuthenticated = false
+
+        if let email = studentEmail {
+            KeychainHelper.shared.deletePassword(email: email)
+        } else if let email = instructorEmail {
+            KeychainHelper.shared.deletePassword(email: email)
+        }
     }
     
 }
