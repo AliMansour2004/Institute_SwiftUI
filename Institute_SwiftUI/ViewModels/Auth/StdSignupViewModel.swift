@@ -33,7 +33,17 @@ final class StdSignupViewModel: ObservableObject {
             return
         }
         guard let selectedUniversity = university else {
-            signupError = AppStrings.LoginSignupViewModelError.emptyFields
+            signupError = AppStrings.LoginSignupViewModelError.selectUniversity
+            return
+        }
+        
+        guard trimmedEmail.isValidEmail else {
+            signupError = AppStrings.LoginSignupViewModelError.invalidEmail
+            return
+        }
+        
+        guard password.isStrongPassword else{
+            signupError = AppStrings.LoginSignupViewModelError.weakPassword
             return
         }
         

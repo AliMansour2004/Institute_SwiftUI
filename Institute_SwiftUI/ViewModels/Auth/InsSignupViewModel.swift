@@ -31,6 +31,16 @@ final class InsSignupViewModel: ObservableObject {
             return
         }
         
+        guard trimmedEmail.isValidEmail else {
+                signupError = AppStrings.LoginSignupViewModelError.invalidEmail
+                return
+            }
+        
+        guard password.isStrongPassword else{
+            signupError = AppStrings.LoginSignupViewModelError.weakPassword
+            return
+        }
+        
         isLoading = true
         defer{ isLoading = false}
         

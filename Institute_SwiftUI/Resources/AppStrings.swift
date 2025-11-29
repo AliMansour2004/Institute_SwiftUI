@@ -41,6 +41,9 @@ enum AppStrings{
     enum LoginSignupViewModelError{
         static let emptyFields = "Please fill in all the fields."
         static let unexpectedError = "An unexpected error occurred."
+        static let selectUniversity = "Please select a university."
+        static let invalidEmail = "Please enter a valid email."
+        static let weakPassword = "Password must be at least 8 characters, contain a number, uppercase letter, and special character."
     }
     enum LoginView{
         static let title = "Login"
