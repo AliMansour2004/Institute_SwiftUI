@@ -8,24 +8,16 @@
 import SwiftUI
 
 struct Index: View {
-//    @EnvironmentObject var auth: AuthViewModel
-    
-    enum StudentTab: Hashable {
-        case StudentHome, Offerings ,StudentProfile, Settings
-    }
-    
-    enum InstructorTab: Hashable {
-        case InstructorHome, Courses ,InstructorProfile, Settings
-    }
-    
-
+    @EnvironmentObject var session: AuthSession
     
     var body: some View {
-//        if let student = auth.currentStudent {
-//            StudentHomeView(student: student)
-//        } else if let instructor = auth.currentInstructor {
-//            InstructorHomeView(instructor: instructor)
-//        }
+        if let student = session.currentStudent {
+            StudentHomeView(student: student)
+        } else if let instructor = session.currentInstructor {
+            InstructorTabView(instructor: instructor)
+        } else if !session.isAuthenticated {
+            Welcome()
+        }
     }
 }
 
