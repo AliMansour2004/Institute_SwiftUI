@@ -24,7 +24,7 @@ final class AuthViewModel: ObservableObject {
     
     private let authService = AuthService()
     
-    func login(context: ModelContext, session: AuthSession) async {
+    func login(context: ModelContext, session: AuthSession) async throws {
         isLoading = true
         errorMessage = nil
         
@@ -35,6 +35,8 @@ final class AuthViewModel: ObservableObject {
                     session.loginStudent(student)
                 case .instructor(let instructor):
                     session.loginInstructor(instructor)
+                case .admin(let admin):
+                    session.loginAdmin(admin)
                 }
             } catch {
                 errorMessage = error.localizedDescription

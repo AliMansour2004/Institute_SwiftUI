@@ -38,7 +38,7 @@ struct LoginView: View {
             
             Button{
                 Task {
-                    await vm.login(context: context, auth: session)
+                    await vm.login(context: context, session: session)
                 }
             }label: {
                 if vm.isLoading {

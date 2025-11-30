@@ -11,6 +11,7 @@ import SwiftData
 enum AuthUser{
     case student(Student)
     case instructor(Instructor)
+    case admin(Admin)
 }
 
 enum AuthError: Error, LocalizedError {

@@ -27,8 +27,9 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     
     private let authService = AuthService()
+    private let vm = AuthViewModel()
     
-    func login(context: ModelContext, auth: AuthSession) async {
+    func login(context: ModelContext, session: AuthSession) async {
         loginError = ""
         
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -41,14 +42,16 @@ final class LoginViewModel: ObservableObject {
         defer { isLoading = false }
         
         do{
-            let result = try await authService.login(email: trimmedEmail, password: password, context: context)
+            try await vm.login(context: context, session: session)
             
-            switch result {
-            case.student(let student):
-                auth.loginStudent(student)
-            case.instructor(let instructor):
-                auth.loginInstructor(instructor)
-            }
+//            let result = try await authService.login(email: trimmedEmail, password: password, context: context)
+//            
+//            switch result {
+//            case.student(let student):
+//                auth.loginStudent(student)
+//            case.instructor(let instructor):
+//                auth.loginInstructor(instructor)
+//            }
         }
         catch{
             if let authError = error as? AuthError {
