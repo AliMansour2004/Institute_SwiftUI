@@ -15,7 +15,10 @@ struct Index: View {
             StudentHomeView(student: student)
         } else if let instructor = session.currentInstructor {
             InstructorTabView(instructor: instructor)
-        } else if !session.isAuthenticated {
+        }else if let admin = session.currentAdmin {
+            AdminTabView(admin: admin)
+        }
+        else if !session.isAuthenticated {
             Welcome()
         }
     }

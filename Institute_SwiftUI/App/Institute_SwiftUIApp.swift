@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct Institute_SwiftUIApp: App {
+    @StateObject private var session = AuthSession()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Course.self, Instructor.self, Offering.self, Room.self, Student.self, University.self
@@ -28,5 +30,6 @@ struct Institute_SwiftUIApp: App {
             Index()
         }
         .modelContainer(sharedModelContainer)
+        .environmentObject(session)
     }
 }
