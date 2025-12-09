@@ -27,22 +27,19 @@ final class AuthViewModel: ObservableObject {
     func login(context: ModelContext, session: AuthSession) async throws {
         isLoading = true
         errorMessage = nil
+        defer { isLoading = false }
         
-            do {
-                let result = try await authService.login(email: email, password: password, context: context)
-                switch result {
-                case .student(let student):
-                    session.loginStudent(student)
-                case .instructor(let instructor):
-                    session.loginInstructor(instructor)
-                case .admin(let admin):
-                    session.loginAdmin(admin)
-                }
-            } catch {
-                errorMessage = error.localizedDescription
-            }
+        let result = try await authService.login(email: email, password: password, context: context)
         
-        isLoading = false
+        switch result {
+        case .student(let student):
+            session.loginStudent(student)
+        case .instructor(let instructor):
+            session.loginInstructor(instructor)
+        case .admin(let admin):
+            session.loginAdmin(admin)
+        }
+            
     }
     
     func signupStudent(context: ModelContext, session: AuthSession) async {

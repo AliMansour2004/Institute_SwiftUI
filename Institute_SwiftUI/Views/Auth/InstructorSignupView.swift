@@ -12,13 +12,14 @@ struct InstructorSignupView: View {
     @Environment(\.modelContext) private var context
     @EnvironmentObject var session: AuthSession
         
-    @StateObject var vm = StdSignupViewModel()
+    @StateObject var vm = InsSignupViewModel()
     
     var body: some View {
         VStack(spacing: 13){
             Text(AppStrings.SignupView.title)
                 .font(.largeTitle)
                 .bold()
+                .padding(.bottom, 30)
             
             TextField(AppStrings.SignupView.fname, text: $vm.fname)
                 .textFieldStyle(.roundedBorder)
@@ -47,7 +48,7 @@ struct InstructorSignupView: View {
             
             Button {
                 Task {
-                    await vm.signup(context: context, auth: session)
+                    await vm.signup(context: context, session: session)
                 }
             } label: {
                 if vm.isLoading {
@@ -61,8 +62,11 @@ struct InstructorSignupView: View {
                         .cornerRadius(12)
                 }
             }
+            .padding(.top, 20)
             
         } //vstack
+        .padding()
+        Spacer()
     }
 }
 
