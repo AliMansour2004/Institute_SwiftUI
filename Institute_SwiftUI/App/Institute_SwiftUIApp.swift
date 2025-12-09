@@ -14,7 +14,7 @@ struct Institute_SwiftUIApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Course.self, Instructor.self, Offering.self, Room.self, Student.self, University.self
+            Course.self, Instructor.self, Offering.self, Room.self, Student.self, University.self, Admin.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

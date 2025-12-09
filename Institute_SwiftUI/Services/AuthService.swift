@@ -46,6 +46,11 @@ final class AuthService{
         if let instructor = try? context.fetch(instructorFetch).first {
             return .instructor(instructor)
         }
+         
+        let adminFetch = adminFetch(email: email)
+         if let admin = try? context.fetch(adminFetch).first {
+             return .admin(admin)
+         }
         
         throw AuthError.userNotFound
     }
@@ -102,6 +107,10 @@ final class AuthService{
     
     func instructorFetch(email: String ) -> FetchDescriptor<Instructor> {
         return FetchDescriptor<Instructor>(predicate: #Predicate { $0.email == email })
+    }
+    
+    func adminFetch(email: String) -> FetchDescriptor<Admin> {
+        return FetchDescriptor<Admin>(predicate: #Predicate { $0.email == email })
     }
     
     func logout() {
