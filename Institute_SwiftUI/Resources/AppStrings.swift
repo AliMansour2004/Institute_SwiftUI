@@ -6,6 +6,52 @@
 //
 
 enum AppStrings{
+    enum Welcome{
+        static let Welcome = "Welcome"
+        static let WelcomeSubtitle = "Institute SwiftUI"
+        static let LoginButton = "Login"
+        static let WelcomeImg = "Welcome"
+    }
+    
+    enum AdminTab{
+        static let Roles = "Roles"
+        static let universities = "Universities"
+        static let courses = "Courses"
+        static let rooms = "Rooms"
+        static let settings = "Settings"
+    }
+    enum AdminTabImage{
+        static let roles = "person.2.fill"
+        static let universities = "globe.fill"
+        static let courses = "book.fill"
+        static let rooms = "house.fill"
+        static let settings = "gearshape.fill"
+    }
+    
+    enum AdminRoles{
+        static let InsUnavailableViewText = "No instructors yet"
+        static let InsUnavailableViewDescription = "You can add instructors by clicking the plus button"
+        static let InsAddButton = "Add Instructor"
+        static let InsButton = "Instructor"
+        
+        static let StdUnavailableViewText = "No students yet"
+        static let StdUnavailableViewDescription = "You can add students by clicking the plus button"
+        static let StdAddButton = "Add Student"
+        static let StdButton = "Student"
+        
+        static let MenuLabel = "Roles"
+    }
+    enum AdminRolesImage{
+        static let InsUnavailableViewImage = "person.crop.circle"
+        static let InsImage = "person.fill"
+        
+        static let StdUnavailableViewImage = "person.2.circle"
+        static let StdImage = "person"
+        
+        static let AddButtonImage = "plus"
+        static let MenuLabelImage = "list.bullet"
+    }
+    
     enum TabTitle{
         static let StudentHome = "Home"
         static let StudentProfile = "Profile"
@@ -53,7 +99,8 @@ enum AppStrings{
     }
     
     enum SignupView{
-        static let title = "Sign Up"
+        static let InsTitle = "Sign Up an Instructor"
+        static let StdTitle = "Sign Up a Student"
         static let fname = "First Name"
         static let lname = "Last Name"
         static let phone = "Phone"

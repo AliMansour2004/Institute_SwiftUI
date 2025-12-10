@@ -16,7 +16,7 @@ struct InstructorSignupView: View {
     
     var body: some View {
         VStack(spacing: 13){
-            Text(AppStrings.SignupView.title)
+            Text(AppStrings.SignupView.InsTitle)
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom, 30)

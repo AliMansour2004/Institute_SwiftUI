@@ -18,9 +18,10 @@ struct StudentSignupView: View {
     
     var body: some View {
         VStack(spacing: 13){
-            Text(AppStrings.SignupView.title)
+            Text(AppStrings.SignupView.StdTitle)
                 .font(.largeTitle)
                 .bold()
+                .padding(.bottom, 30)
             
             TextField(AppStrings.SignupView.fname, text: $vm.fname)
                 .textFieldStyle(.roundedBorder)
@@ -74,7 +75,10 @@ struct StudentSignupView: View {
             }
             
         } //vstack
+        .padding()
+        Spacer()
     }
+    
 }
 
 #Preview {

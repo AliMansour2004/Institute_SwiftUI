@@ -18,7 +18,7 @@ final class Admin{
     init(
         fname: String = "Admin",
         lname: String = "Ali",
-        phone: String = "70240761",
+        phone: String = "+96170240761",
         email: String = "ali.a.mansour@gmail.com",
         password: String = "P@ssw0rd"
     ) {

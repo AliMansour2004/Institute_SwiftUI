@@ -22,52 +22,52 @@ struct AdminTabView: View {
         TabView(selection: $selectedTab) {
             
             NavigationStack{
-                AdminInstructorView(admin: admin)
-                    .navigationTitle("Roles")
+                AdminRolesView(admin: admin)
+                    .navigationTitle(AppStrings.AdminTab.Roles)
             }
             .tabItem({
-                Text("Roles")
-                Image(systemName: "person.2.fill")
+                Text(AppStrings.AdminTab.Roles)
+                Image(systemName: AppStrings.AdminTabImage.roles)
             })
             .tag(AdminTab.roles)
             
             NavigationStack{
                 AdminUniversityView(admin: admin)
-                    .navigationTitle("Universities")
+                    .navigationTitle(AppStrings.AdminTab.universities)
             }
             .tabItem({
-                Text("Universities")
-                Image(systemName: "book.fill")
+                Text(AppStrings.AdminTab.universities)
+                Image(systemName: AppStrings.AdminTabImage.universities)
             })
             .tag(AdminTab.universities)
             
             NavigationStack{
                 AdminCourseView(admin: admin)
-                    .navigationTitle("Courses")
+                    .navigationTitle(AppStrings.AdminTab.courses)
             }
             .tabItem({
-                Text("Courses")
-                Image(systemName: "book.fill")
+                Text(AppStrings.AdminTab.courses)
+                Image(systemName: AppStrings.AdminTabImage.courses)
             })
             .tag(AdminTab.courses)
             
             NavigationStack{
                 AdminRoomView(admin: admin)
-                    .navigationTitle("Rooms")
+                    .navigationTitle(AppStrings.AdminTab.rooms)
             }
             .tabItem({
-                Text("Rooms")
-                Image(systemName: "house.fill")
+                Text(AppStrings.AdminTab.rooms)
+                Image(systemName: AppStrings.AdminTabImage.rooms)
             })
             .tag(AdminTab.rooms)
             
             NavigationStack{
                 AdminSettingsView(admin: admin)
-                    .navigationTitle("Settings")
+                    .navigationTitle(AppStrings.AdminTab.settings)
             }
             .tabItem ({
-                Text("Settings")
-                Image(systemName: "gearshape.fill")
+                Text(AppStrings.AdminTab.settings)
+                Image(systemName: AppStrings.AdminTabImage.settings)
             })
                         
         }

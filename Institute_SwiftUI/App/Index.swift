@@ -19,7 +19,7 @@ struct Index: View {
             AdminTabView(admin: admin)
         }
         else if !session.isAuthenticated {
-            Welcome()
+            GuestTabView()
         }
     }
 }
