@@ -32,7 +32,7 @@ struct AdminTabView: View {
             .tag(AdminTab.roles)
             
             NavigationStack{
-                AdminUniversityView(admin: admin)
+                AdminPlaceView(admin: admin)
                     .navigationTitle(AppStrings.AdminTab.universities)
             }
             .tabItem({
@@ -52,12 +52,12 @@ struct AdminTabView: View {
             .tag(AdminTab.courses)
             
             NavigationStack{
-                AdminRoomView(admin: admin)
-                    .navigationTitle(AppStrings.AdminTab.rooms)
+                AdminStatisticsView(admin: admin)
+                    .navigationTitle(AppStrings.AdminTab.statistics)
             }
             .tabItem({
-                Text(AppStrings.AdminTab.rooms)
-                Image(systemName: AppStrings.AdminTabImage.rooms)
+                Text(AppStrings.AdminTab.statistics)
+                Image(systemName: AppStrings.AdminTabImage.statistics)
             })
             .tag(AdminTab.rooms)
             

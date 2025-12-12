@@ -15,16 +15,16 @@ enum AppStrings{
     
     enum AdminTab{
         static let Roles = "Roles"
-        static let universities = "Universities"
+        static let universities = "Places"
         static let courses = "Courses"
-        static let rooms = "Rooms"
+        static let statistics = "Statistics"
         static let settings = "Settings"
     }
     enum AdminTabImage{
         static let roles = "person.2.fill"
         static let universities = "globe.fill"
         static let courses = "book.fill"
-        static let rooms = "house.fill"
+        static let statistics = "chart.bar.fill"
         static let settings = "gearshape.fill"
     }
     
