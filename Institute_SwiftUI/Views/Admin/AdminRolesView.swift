@@ -81,7 +81,7 @@ struct AdminRolesView: View {
                     Label(AppStrings.AdminRoles.MenuLabel, systemImage:AppStrings.AdminRolesImage.MenuLabelImage)
                 }
             }
-        }
+        } //toolbar
         .sheet(isPresented: $showingInstructorSignup) {
             InstructorSignupView()
         }
@@ -93,5 +93,5 @@ struct AdminRolesView: View {
 
 #Preview {
     let admin = Admin()
-    AdminRolesView(admin: admin)
+    AdminTabView(admin: admin)
 }

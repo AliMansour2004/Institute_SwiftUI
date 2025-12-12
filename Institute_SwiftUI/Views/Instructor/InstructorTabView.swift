@@ -20,11 +20,41 @@ struct InstructorTabView: View {
     var body: some View {
         TabView(selection: $selectedTab){
             
-            InstructorHomeView(instructor: instructor)
-                .tabItem({
-                    Image(systemName: "house")
-                    Text("Home")
-                })
+            NavigationStack{
+                InstructorHomeView(instructor: instructor)
+                    .navigationTitle("Dashboard")
+            }.tabItem({
+                Image(systemName: "house")
+                Text("Home")
+            })
+            .tag(InstructorTab.home)
+            
+            NavigationStack{
+                InstructorCourseView(instructor: instructor)
+                    .navigationTitle("Courses")
+            }.tabItem ({
+                Image(systemName: "book")
+                Text("Courses")
+            })
+            .tag(InstructorTab.courses)
+            
+            NavigationStack{
+                InstructorProfileView(instructor: instructor)
+                    .navigationTitle("Profile")
+            }.tabItem({
+                Image(systemName: "person")
+                Text("Profile")
+            })
+            .tag(InstructorTab.profile)
+            
+            NavigationStack{
+                InstructorsSettingsView(instruction: instructor)
+                    .navigationTitle("Settings")
+            }.tabItem({
+                Image(systemName: "gearshape")
+                Text("Settings")
+            })
+            .tag(InstructorTab.settings)
             
         }
     }
